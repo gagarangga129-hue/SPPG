@@ -211,25 +211,4 @@ async function importExcel(ev,table){
  }catch(e){alert('Import gagal: '+e.message+'\nPeriksa nama kolom dan format data Excel.')}
  finally{ev.target.value=''}
 }
-
- ALTER TABLE public.volunteers
-DROP CONSTRAINT IF EXISTS volunteers_division_check;
-
-ALTER TABLE public.volunteers
-ADD CONSTRAINT volunteers_division_check
-CHECK (
-    division IN (
-        'Prepare',
-        'Pengolahan Bahan',
-        'Pemorsian',
-        'Distribusi',
-        'Pemorsian Distribusi',
-        'Cuci Food Tray',
-        'Admin Gudang',
-        'Admin',
-        'Chef',
-        'Asisten Lapangan',
-        'Office boy'
-    )
-);
 </script></body></html>
